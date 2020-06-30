@@ -1,5 +1,3 @@
-# React/Redux/Router Starter Project
+# DB File Store in React
 
-> Provided for the students of the [Bottega Code School](https://bottega.tech/)
-
-*Fork from [es6-webpack2-starter](https://github.com/micooz/es6-webpack2-starter)*
+This is a simple project to learn file upload and storage in a database.
