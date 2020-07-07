@@ -1,0 +1,28 @@
+.file-share-wrapper {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   button {
+      background-color: #4C2C72;
+      border-radius: 5px;
+      border: 1px #4B296B;
+      color: #ffffff;
+      padding: 8px;
+      
+      .delete-button {
+         background-color: red;
+      }
+   }
+
+   input {
+      margin: 10px;
+   }
+
+   .files-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-items: center;
+      grid-gap: 20px;
+   }
+}

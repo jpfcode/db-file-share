@@ -14,6 +14,7 @@ export default class FileShare extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGetData = this.handleGetData.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleChange(event) {
@@ -51,11 +52,18 @@ export default class FileShare extends Component {
 
     this.state.data.forEach(fileData => {
       fileContainer.push(
-        <SingleFile key={fileData.id} id={fileData.id} name={fileData.name} type={fileData.file_type} />
+        <SingleFile key={fileData.id} id={fileData.id} name={fileData.name} type={fileData.file_type} handleDelete={this.handleDelete} />
       )
     })
 
     return fileContainer;
+  }
+
+  handleDelete(id) {
+    const newData = this.state.data.filter(fileData => fileData.id != id);
+    this.setState({
+      data: newData
+    })
   }
 
   render() {
@@ -65,7 +73,9 @@ export default class FileShare extends Component {
         <button onClick={this.handleSubmit}>Send</button>
         <hr />
         <button onClick={this.handleGetData}>Get Data</button>
-        {this.renderFiles()}
+        <div className="files-wrapper">
+          {this.renderFiles()}
+        </div>
       </div>
     );
   }
